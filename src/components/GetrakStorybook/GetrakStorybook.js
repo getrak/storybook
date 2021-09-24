@@ -90,3 +90,5 @@ export class GetrakStorybook extends LitElement {
     `;
   }
 }
+
+customElements.define('getrak-storybook', GetrakStorybook);

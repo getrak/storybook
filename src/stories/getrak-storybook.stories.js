@@ -1,5 +1,5 @@
 import { html } from 'lit-html';
-import '../getrak-storybook.js';
+import '../components/GetrakStorybook/GetrakStorybook.js';
 
 export default {
   title: 'GetrakStorybook',
