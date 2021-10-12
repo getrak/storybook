@@ -1,21 +1,22 @@
-import { html } from 'lit-html';
-import { styleMap } from 'lit-html/directives/style-map';
-import './button.css';
+import { html } from 'lit-html'
+import { styleMap } from 'lit-html/directives/style-map'
+import './button.css'
 
 /**
- * Primary UI component for user interaction
+ * Botão base
  */
 export const Button = ({ primary, backgroundColor = null, size, label, onClick }) => {
-  const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
+  const mode = primary ? 'button--primary' : 'button--secondary'
 
   return html`
+    <h1>Teste</h1>
     <button
       type="button"
-      class=${['storybook-button', `storybook-button--${size || 'medium'}`, mode].join(' ')}
+      class=${['button', `button--${size || 'medium'}`, mode].join(' ')}
       style=${styleMap({ backgroundColor })}
       @click=${onClick}
     >
       ${label}
     </button>
-  `;
-};
+  `
+}

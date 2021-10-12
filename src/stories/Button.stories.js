@@ -1,34 +1,39 @@
-import { Button } from '../components/Button/Button';
+// import { Button } from '../components/Button/Button'
+import { html } from 'lit-html';
+import '../components/Button/GButton.js';
 
 export default {
-  title: 'Example/Button',
+  title: 'Atoms/Button',
   argTypes: {
     backgroundColor: { control: 'color' },
-    onClick: { action: 'onClick' },
-  },
-};
+    onClick: { action: 'onClick' }
+  }
+}
 
-const Template = (args) => Button(args);
+const Template = ({ primary, label, backgroundColor, onClick, size }) =>
+  html`<g-button ?primary=${primary} .label=${label} .backgroundColor=${backgroundColor} @click=${onClick} .size=${size}></g-button>`;
 
-export const Primary = Template.bind({});
+
+export const Primary = Template.bind({})
 Primary.args = {
   primary: true,
-  label: 'Button',
-};
+  label: 'Botão primário'
+}
 
-export const Secondary = Template.bind({});
+export const Secondary = Template.bind({})
 Secondary.args = {
-  label: 'Button',
-};
+  primary: false,
+  label: 'Botão secundário'
+}
 
-export const Large = Template.bind({});
+export const Large = Template.bind({})
 Large.args = {
   size: 'large',
-  label: 'Button',
-};
+  label: 'Botão largo'
+}
 
-export const Small = Template.bind({});
+export const Small = Template.bind({})
 Small.args = {
   size: 'small',
-  label: 'Button',
-};
+  label: 'Botão pequeno'
+}

@@ -27,6 +27,10 @@ export class GetrakStorybook extends LitElement {
         background-color: var(--getrak-storybook-background-color);
       }
 
+      h1 {
+        font-size: 50px;
+      }
+
       main {
         flex-grow: 1;
       }
