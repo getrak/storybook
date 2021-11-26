@@ -1,0 +1,108 @@
+import { Meta, ArgsTable, Story, Canvas, Source } from '@storybook/addon-docs';
+
+import dedent from 'ts-dedent';
+
+import { Button } from '../components/Button/Button';
+
+
+<Meta 
+    title="MDX/Button"
+    component={Button}
+    argTypes={{
+        label: {
+            name: 'label'
+        }
+    }}
+/>
+
+# Button
+
+O componente `button` é um elemento acionável por clique.
+Tem variações de tamanho que são passadas através do argumento `size`.
+Também é possível sinalizar se o botão deve ser primário ou secundário, passando ou não o argumento `primary`, onde o mesmo assume o valor default `false`.
+Para alterar o conteúdo do botão, basta passar o argumento `label`.
+
+
+export const someFunction = (someValue) => {
+    return `I am a ${someValue}`;
+}
+
+<Canvas>
+    <Story 
+        name="Primary"
+        args={{
+            primary: true,
+            size: 'medium',
+            label: 'button'
+        }}
+        argTypes={{
+            label: {
+                name: 'different label'
+            }
+        }}
+    >
+        {(args) => {
+            const { label } = args;
+            const functionResult = someFunction(label);
+            return <Button {...args} label={functionResult} />
+        }}
+    </Story>
+</Canvas>
+
+<ArgsTable of={Button} />
+
+
+### Hierarquia
+
+Quando houver a presensa de mais de um botão na mesma interação, ex.: modal, deve-se estabelecer uma hierarquia de importância, onde o botão principal deve estar marcando como `primary`, onde este deve estar sempre alinhado à direita do elemento.
+O botão secundário deve vir logo após, posicionado à esquerda do botão primário.
+
+<Canvas>
+    <Story
+        name="Hierarquia"
+        args={{
+            primary: false,
+            size: 'medium'
+        }}
+    >
+        {(args) => {
+            return <div>
+                    <Button {...args} label="Secondary action" />
+                    <Button {...args} label="Primary action" primary/>
+                </div>
+        }}
+    </Story>
+</Canvas>
+
+### Tamanhos
+
+É possível definir o tamanho do componente `button` passando o argumento `size`. Atualmente temos os tamanhos `small`, `medium` e `large`.
+
+<Canvas>
+    <Story
+        name="Tamanhos"
+        args={{
+            primary: false
+        }}
+    >
+        {(args) => {
+            return <div>
+                    <Button {...args} label="Small" size="small" />
+                    <Button {...args} label="Medium" />
+                    <Button {...args} label="Large" size="large" />
+                </div>
+        }}
+    </Story>
+</Canvas>
+
+#### Exemplo de css na documentação
+
+<Source 
+    language='css'
+    code={dedent`
+        .container {
+            display: grid | inline-grid;
+        }
+    `
+    }
+/>
