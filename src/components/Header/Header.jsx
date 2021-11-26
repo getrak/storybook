@@ -1,11 +1,12 @@
-import { html } from 'lit-html';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 import { Button } from '../Button/Button';
 import './header.css';
 
-export const Header = ({ user, onLogin, onLogout, onCreateAccount }) => html`
+export const Header = ({ user, onLogin, onLogout, onCreateAccount }) => (
   <header>
-    <div class="wrapper">
+    <div className="wrapper">
       <div>
         <svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
           <g fill="none" fillRule="evenodd">
@@ -26,20 +27,26 @@ export const Header = ({ user, onLogin, onLogout, onCreateAccount }) => html`
         <h1>Acme</h1>
       </div>
       <div>
-        ${user
-          ? Button({ size: 'small', onClick: onLogout, label: 'Log out' })
-          : html`${Button({
-              size: 'small',
-              onClick: onLogin,
-              label: 'Log in',
-            })}
-            ${Button({
-              primary: true,
-              size: 'small',
-              onClick: onCreateAccount,
-              label: 'Sign up',
-            })}`}
+        {user ? (
+          <Button size="small" onClick={onLogout} label="Log out" />
+        ) : (
+          <>
+            <Button size="small" onClick={onLogin} label="Log in" />
+            <Button primary size="small" onClick={onCreateAccount} label="Sign up" />
+          </>
+        )}
       </div>
     </div>
   </header>
-`;
+);
+
+Header.propTypes = {
+  user: PropTypes.shape({}),
+  onLogin: PropTypes.func.isRequired,
+  onLogout: PropTypes.func.isRequired,
+  onCreateAccount: PropTypes.func.isRequired,
+};
+
+Header.defaultProps = {
+  user: null,
+};

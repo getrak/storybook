@@ -1,23 +1,21 @@
-import { html } from 'lit-html';
+import React from 'react';
+import PropTypes from 'prop-types';
+
 import { Header } from '../Header/Header';
 import './page.css';
 
-export const Page = ({ user, onLogin, onLogout, onCreateAccount }) => html`
+export const Page = ({ user, onLogin, onLogout, onCreateAccount }) => (
   <article>
-    ${Header({
-      user,
-      onLogin,
-      onLogout,
-      onCreateAccount,
-    })}
+    <Header user={user} onLogin={onLogin} onLogout={onLogout} onCreateAccount={onCreateAccount} />
 
     <section>
       <h2>Pages in Storybook</h2>
       <p>
-        We recommend building UIs with a
+        We recommend building UIs with a{' '}
         <a href="https://componentdriven.org" target="_blank" rel="noopener noreferrer">
-          <strong>component-driven</strong> </a
-        >process starting with atomic components and ending with pages.
+          <strong>component-driven</strong>
+        </a>{' '}
+        process starting with atomic components and ending with pages.
       </p>
       <p>
         Render pages with mock data. This makes it easy to build and review page states without
@@ -35,16 +33,18 @@ export const Page = ({ user, onLogin, onLogout, onCreateAccount }) => html`
         </li>
       </ul>
       <p>
-        Get a guided tutorial on component-driven development at
+        Get a guided tutorial on component-driven development at{' '}
         <a href="https://storybook.js.org/tutorials/" target="_blank" rel="noopener noreferrer">
           Storybook tutorials
         </a>
-        . Read more in the
-        <a href="https://storybook.js.org/docs" target="_blank" rel="noopener noreferrer"> docs </a>
+        . Read more in the{' '}
+        <a href="https://storybook.js.org/docs" target="_blank" rel="noopener noreferrer">
+          docs
+        </a>
         .
       </p>
       <div className="tip-wrapper">
-        <span className="tip">Tip</span> Adjust the width of the canvas with the
+        <span className="tip">Tip</span> Adjust the width of the canvas with the{' '}
         <svg width="10" height="10" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
           <g fill="none" fillRule="evenodd">
             <path
@@ -58,4 +58,14 @@ export const Page = ({ user, onLogin, onLogout, onCreateAccount }) => html`
       </div>
     </section>
   </article>
-`;
+);
+Page.propTypes = {
+  user: PropTypes.shape({}),
+  onLogin: PropTypes.func.isRequired,
+  onLogout: PropTypes.func.isRequired,
+  onCreateAccount: PropTypes.func.isRequired,
+};
+
+Page.defaultProps = {
+  user: null,
+};
