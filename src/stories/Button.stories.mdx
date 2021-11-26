@@ -1,0 +1,58 @@
+import { Meta, ArgsTable, Story, Canvas, Source, Description } from '@storybook/addon-docs';
+
+import dedent from 'ts-dedent';
+
+import { Button } from '../components/Button/Button';
+
+
+<Meta 
+    title="Atoms/Button"
+    component={Button}
+    argTypes={{
+        label: {
+            name: 'label'
+        }
+    }}
+/>
+
+# Button
+
+<Description of={Button} />
+
+export const someFunction = (someValue) => {
+    return `i am a ${someValue}`;
+}
+
+<Canvas>
+    <Story 
+        name="My story"
+        args={{
+            primary: true,
+            size: 'small',
+            label: 'button'
+        }}
+        argTypes={{
+            label: {
+                name: 'different label'
+            }
+        }}
+    >
+        {(args) => {
+            const { label } = args;
+            const functionResult = someFunction(label);
+            return <Button {...args} label={functionResult} />
+        }}
+    </Story>
+</Canvas>
+
+<ArgsTable of={Button} />
+
+<Source 
+    language='css'
+    code={dedent`
+        .container {
+            display: grid | inline-grid;
+        }
+    `
+    }
+/>
