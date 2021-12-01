@@ -1,12 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './button.css';
+import { createUseStyles } from 'react-jss'
+import * as designTokens from '../../design-tokens.tokens.json';
 
 /**
  * Primary UI component for user interaction
  */
+
+const useStyles = createUseStyles({
+  myClass: {
+    backgroundColor: designTokens.color.verdesucesso.value
+  }
+});
+
 export const Button = ({ primary, backgroundColor, size, label, ...props }) => {
-  const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
+  const aditionalClass = useStyles()
+  const mode = primary ? `storybook-button--primary ${aditionalClass.myClass}` : `storybook-button--secondary`;
   return (
     <button
       type="button"
