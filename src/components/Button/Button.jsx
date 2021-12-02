@@ -10,7 +10,7 @@ import * as designTokens from '../../design-tokens.tokens.json';
 
 const useStyles = createUseStyles({
   myClass: {
-    backgroundColor: designTokens.color.amareloalerta.value
+    backgroundColor: designTokens.color.vermelhoerro.value
   }
 });
 
