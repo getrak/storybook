@@ -1,7 +1,12 @@
 {
   "name": "getrak-storybook",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "description": "Getrak storybook components",
+  "main": "index.js",
+  "repository": "https://github.com/denysrocha/getrak-storybook.git",
+  "author": "Denys Rocha <denys.rocha@getrak.com.br>",
+  "license": "MIT",
   "dependencies": {
     "@testing-library/jest-dom": "^5.15.1",
     "@testing-library/react": "^12.1.2",
@@ -13,7 +18,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "cross-env BABEL_ENV=production babel src -d dist",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
@@ -48,7 +53,18 @@
       "last 1 safari version"
     ]
   },
+  "babel": {
+    "presets": [
+      [
+        "react-app",
+        {
+          "absoluteRuntime": false
+        }
+      ]
+    ]
+  },
   "devDependencies": {
+    "@babel/cli": "^7.16.0",
     "@babel/core": "^7.16.0",
     "@babel/preset-env": "^7.16.4",
     "@babel/preset-react": "^7.16.0",
@@ -58,9 +74,11 @@
     "@storybook/node-logger": "^6.3.12",
     "@storybook/preset-create-react-app": "^3.2.0",
     "@storybook/react": "^6.3.12",
+    "auto": "^10.32.3",
     "babel-jest": "26.6.0",
     "babel-loader": "8.1.0",
     "chromatic": "^6.1.0",
+    "cross-env": "^7.0.3",
     "jest": "26.6.0",
     "react-test-renderer": "^17.0.2",
     "web-vitals": "^2.1.2",
