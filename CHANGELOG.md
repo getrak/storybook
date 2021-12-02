@@ -1,5 +1,17 @@
 # v0.1.1 (Thu Dec 02 2021)
 
+#### ⚠️ Pushed to `main`
+
+- Configurando versionamento automático pelo auto (denys.rocha@getrak.com.br)
+
+#### Authors: 1
+
+- Denys Rocha (denys.rocha@getrak.com.br)
+
+---
+
+# v0.1.1 (Thu Dec 02 2021)
+
 #### 🐛 Bug Fix
 
 - alterando cor do botão [#3](https://github.com/denysrocha/getrak-storybook/pull/3) (denys.rocha@getrak.com.br)
