@@ -1,3 +1,22 @@
+# v0.1.4 (Fri Dec 03 2021)
+
+#### 🐛 Bug Fix
+
+- Mudando cor do botão [#5](https://github.com/denysrocha/getrak-storybook/pull/5) (denys.rocha@getrak.com.br)
+- Forçando release [#4](https://github.com/denysrocha/getrak-storybook/pull/4) (denys.rocha@getrak.com.br)
+
+#### ⚠️ Pushed to `main`
+
+- Tentando lançar uma release (denys.rocha@getrak.com.br)
+- Merge branch 'main' of https://github.com/denysrocha/getrak-storybook (denys.rocha@getrak.com.br)
+- Melhorando a documentação no Readme.md (denys.rocha@getrak.com.br)
+
+#### Authors: 1
+
+- Denys Rocha ([@denysrocha](https://github.com/denysrocha))
+
+---
+
 # v0.1.3 (Fri Dec 03 2021)
 
 #### ⚠️ Pushed to `main`
