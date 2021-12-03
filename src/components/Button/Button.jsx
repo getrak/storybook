@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './button.css';
 import { createUseStyles } from 'react-jss'
-import * as designTokens from '../../design-tokens.tokens.json';
+import * as designTokens from '../design-tokens.tokens.json';
 
 /**
  * Primary UI component for user interaction
