@@ -26,7 +26,7 @@ function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && 
  */
 var useStyles = (0, _reactJss.createUseStyles)({
   myClass: {
-    backgroundColor: designTokens.color.verdesucesso.value
+    backgroundColor: designTokens.color.vermelhoerro.value
   }
 });
 
