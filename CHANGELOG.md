@@ -1,3 +1,16 @@
+# v0.1.3 (Fri Dec 03 2021)
+
+#### ⚠️ Pushed to `main`
+
+- Merge branch 'main' of https://github.com/denysrocha/getrak-storybook (denys.rocha@getrak.com.br)
+- Corrigindo exportação do componente, apontando para pasta /dist (denys.rocha@getrak.com.br)
+
+#### Authors: 1
+
+- Denys Rocha (denys.rocha@getrak.com.br)
+
+---
+
 # v0.1.2 (Thu Dec 02 2021)
 
 #### ⚠️ Pushed to `main`
